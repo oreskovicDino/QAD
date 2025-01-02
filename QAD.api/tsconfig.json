@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // ES2015 or higher
+    "module": "CommonJS", // CommonJS for Node.js
+    "rootDir": "./src", // Source files directory
+    "outDir": "./dist", // Output directory for compiled files
+    "strict": true, // Enable strict type checking
+    "esModuleInterop": true, // Allow default imports from CommonJS modules
+    "skipLibCheck": true, // Skip type checks of declaration files
+    "resolveJsonModule": true, // Allow importing JSON files
+    "emitDecoratorMetadata": true, // Emit design-type metadata for decorated declarations in source files
+    "experimentalDecorators": true // Enable experimental support for ES7 decorators
+  },
+  "include": ["src/**/*"], // Include all TypeScript files in the src folder
+  "exclude": ["node_modules", "dist"] // Exclude unnecessary folders
+}

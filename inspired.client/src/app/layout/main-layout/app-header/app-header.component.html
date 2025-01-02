@@ -1,0 +1,11 @@
+<div class="header-wrapper">
+  <span id="logo">Inspired</span>
+  <div id="userSettings" [matMenuTriggerFor]="userSettingsMenu"></div>
+  <mat-menu #userSettingsMenu="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Settings</button>
+    <button mat-menu-item (click)="signOut()">Sign out</button>
+  </mat-menu>
+</div>

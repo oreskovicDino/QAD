@@ -1,0 +1,35 @@
+{
+  "name": "qad.api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/app.js",
+    "dev": "ts-node-dev --respawn src/app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typeorm": "typeorm-ts-node-commonjs",
+    "orm-g": "npx ts-node ./node_modules/typeorm/cli.js migration:generate ./src/migrations/%1 --dataSource ./src/config/data-source.ts",
+    "pw-orm-g": "npx ts-node ./node_modules/typeorm/cli.js migration:generate ./src/migrations/%npm_config_name% --dataSource ./src/config/data-source.ts",
+    "orm-run": "npx ts-node ./node_modules/typeorm/cli.js migration:run --dataSource ./src/config/data-source.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cors": "^2.8.17",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "firebase-admin": "^13.0.2",
+    "pg": "^8.13.1",
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typeorm": "^0.3.20",
+    "typescript": "^5.7.2"
+  }
+}

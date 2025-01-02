@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@use '../public/styles/variables.scss';
+@use '../public/styles/form.scss';
+@use '../public/styles/mdc-overrides.scss';
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: #16042b;
+  background-image: url("/img/kindajean.png");
+}

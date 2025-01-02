@@ -1,0 +1,72 @@
+<div class="message-wrapper">
+  <h1 class="title">Login</h1>
+  <p *ngIf="message" class="error-message">{{ message }}</p>
+  <p *ngIf="verificationSentMessage" class="error-message">{{ verificationSentMessage }}</p>
+  <button *ngIf="isNotVerified" mat-button (click)="requestEmailVerificationResend()" >Resend email verification?</button>
+</div>
+<form
+  [formGroup]="loginForm"
+  (ngSubmit)="onSubmit()"
+  class="form-container form"
+>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" placeholder="Enter your email" />
+    <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+      Email is required
+    </mat-error>
+    <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+      Enter a valid email
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Password</mat-label>
+    <input
+      matInput
+      type="password"
+      formControlName="password"
+      placeholder="Enter your password"
+    />
+    <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+      Password is required
+    </mat-error>
+    <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">
+      Password must be at least 6 characters
+    </mat-error>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="!loginForm.valid"
+  >
+    LogIn
+  </button>
+</form>
+<mat-divider style="margin: 20px 0"></mat-divider>
+<div class="navigation-btn-wrapper">
+  <button mat-button (click)="navigateToRegistration()">Register</button>
+  <button mat-button (click)="navigateToForgottenPass()">Forgot password?</button>
+</div>
+<mat-divider style="margin: 20px 0"></mat-divider>
+<div class="social-login-btn-wrapper">
+  <button
+    mat-stroked-button
+    type="button"
+    class="full-width"
+    style="margin-bottom: 10px"
+    (click)="providerLogin(providerType.Google)"
+  >
+    Google
+  </button>
+  <button
+    mat-stroked-button
+    type="button"
+    class="full-width"
+    style="margin-bottom: 10px"
+    (click)="providerLogin(providerType.Facebook)"
+  >
+    Facebook
+  </button>
+</div>

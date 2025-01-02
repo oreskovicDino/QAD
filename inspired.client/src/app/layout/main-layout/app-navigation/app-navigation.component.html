@@ -1,0 +1,43 @@
+<div class="navigation-wrapper">
+  <div class="navigation-group navigation-left-group">
+    <button
+      mat-icon-button
+      routerLink="/dashboard"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      title="some btn title"
+    >
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      routerLink="/my-questions"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      title="some btn title"
+    >
+      <mat-icon>question_answer</mat-icon>
+    </button>
+  </div>
+  <span id="pageTitle">{{currentPage}}</span>
+  <div class="navigation-group navigation-right-group">
+    <button
+      mat-icon-button
+      routerLink="/my-answers"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      title="some btn title"
+    >
+      <mat-icon>inbox</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      routerLink="/favorites"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      title="some btn title"
+    >
+      <mat-icon>comment</mat-icon>
+    </button>
+  </div>
+</div>

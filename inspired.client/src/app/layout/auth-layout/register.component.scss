@@ -1,0 +1,13 @@
+.password-has-error-margin {
+    margin-top: 50px;
+  }
+  .message-wrapper {
+    padding: 10px 0;
+    .title{
+      margin-bottom: 10px;
+    }
+    .error-message {
+      font-size: 18px;
+      color: red;
+    }
+  }

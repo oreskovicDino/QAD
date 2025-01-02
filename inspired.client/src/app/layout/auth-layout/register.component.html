@@ -1,0 +1,121 @@
+<div class="message-wrapper">
+  <h1 class="title">Register</h1>
+  <p *ngIf="message" class="error-message">{{ message }}</p>
+</div>
+<form
+  [formGroup]="registerForm"
+  (ngSubmit)="onSubmit()"
+  class="form-container form"
+>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Username</mat-label>
+    <input
+      matInput
+      formControlName="username"
+      placeholder="Enter your username"
+    />
+    <mat-error *ngIf="registerForm.get('username')?.hasError('required')">
+      username is required
+    </mat-error>
+    <mat-error *ngIf="registerForm.get('username')?.hasError('minlength')">
+      username has to be at least 6 characters.
+    </mat-error>
+    <mat-error *ngIf="registerForm.get('username')?.hasError('maxlength')">
+      username is to long.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" placeholder="Enter your email" />
+    <mat-error *ngIf="registerForm.get('email')?.hasError('required')">
+      Email is required
+    </mat-error>
+    <mat-error *ngIf="registerForm.get('email')?.hasError('email')">
+      Enter a valid email
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Password</mat-label>
+    <input
+      matInput
+      type="password"
+      formControlName="password"
+      placeholder="Enter your password"
+    />
+    <mat-error *ngIf="registerForm.get('password')?.hasError('required')">
+      Password is required
+    </mat-error>
+    <mat-error *ngIf="registerForm.get('password')?.hasError('minlength')">
+      Password must contain at least 8 characters.
+    </mat-error>
+    <mat-error *ngIf="registerForm.get('password')?.hasError('hasUpper')">
+      Password must contain at least one uppercase letter.
+    </mat-error>
+    <mat-error *ngIf="registerForm.get('password')?.hasError('hasLower')">
+      Password must contain at least one lowercase letter.
+    </mat-error>
+    <mat-error *ngIf="registerForm.get('password')?.hasError('hasNumber')">
+      Password must contain at least one number.
+    </mat-error>
+    <mat-error *ngIf="registerForm.get('password')?.hasError('hasSpecialChar')">
+      Password must contain at least one special character.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field
+    *ngIf="!registerForm.get('password')?.errors"
+    appearance="outline"
+    class="full-width"
+  >
+    <mat-label>Password Repeat</mat-label>
+    <input
+      matInput
+      type="password"
+      formControlName="passwordRepeat"
+      placeholder="Repeat your password"
+    />
+    <mat-error *ngIf="registerForm.get('passwordRepeat')?.hasError('required')">
+      passwordRepeat is required
+    </mat-error>
+    <mat-error
+      *ngIf="registerForm.get('passwordRepeat')?.hasError('passwordMismatch')"
+    >
+      Passwords do not match
+    </mat-error>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="!registerForm.valid"
+    [class.password-has-error-margin]="registerForm.get('password')?.errors"
+  >
+    Submit
+  </button>
+</form>
+<mat-divider style="margin: 20px 0"></mat-divider>
+<div class="navigation-btn-wrapper">
+  <button mat-button (click)="navigateToLogin()">LogIn instead</button>
+</div>
+<mat-divider style="margin: 20px 0"></mat-divider>
+<div class="social-login-btn-wrapper">
+  <button
+    mat-stroked-button
+    type="button"
+    class="full-width"
+    style="margin-bottom: 10px"
+    (click)="providerRegister(providerType.Google)"
+  >
+    Google
+  </button>
+  <button
+    mat-stroked-button
+    type="button"
+    class="full-width"
+    (click)="providerRegister(providerType.Facebook)"
+  >
+    Facebook
+  </button>
+</div>
