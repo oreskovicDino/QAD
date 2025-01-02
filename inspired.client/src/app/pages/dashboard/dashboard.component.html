@@ -1,0 +1,28 @@
+<mat-card class="main-question-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>Question title</mat-card-title>
+    <button
+      id="favoriteBtn"
+      class="secondary"
+      mat-icon-button
+      (click)="toggleFavorite()"
+    >
+      <mat-icon *ngIf="!isQuestionFavorite">favorite_border</mat-icon>
+      <mat-icon *ngIf="isQuestionFavorite">favorite</mat-icon>
+    </button>
+    <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+  </mat-card-header>
+  <mat-card-content>
+    <p>What does it mean to truly "listen"?</p>
+  </mat-card-content>
+</mat-card>
+<mat-card class="main-answer-card" appearance="outlined">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Leave a comment</mat-label>
+    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+  </mat-form-field>
+</mat-card>
+<button id="navigationNextQuestion" mat-fab extended>
+  <mat-icon>model_training</mat-icon>
+  Next question
+</button>

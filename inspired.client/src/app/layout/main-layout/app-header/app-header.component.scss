@@ -1,0 +1,32 @@
+.header-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+
+  #logo {
+    font-size: 2em;
+  }
+
+  #userSettings {
+    height: 50px;
+    width: 50px;
+    background-color: #FAFAFA;
+    background-image: url("/img/user-manage.png");
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    box-shadow: var(--mat-sys-level2);
+    &:hover {
+      cursor: pointer;
+      filter: contrast(0.9);
+      box-shadow: var(--mat-sys-level3);
+    }
+    &:active {
+      box-shadow: var(--mat-sys-level1);
+    }
+  }
+}

@@ -1,0 +1,9 @@
+$content-max-width: 1920px;
+
+:root {
+  --content-max-width: #{$content-max-width};
+}
+
+.padding-10 {
+    padding: 10px;
+}
