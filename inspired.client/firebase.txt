@@ -1,0 +1,3 @@
+## Deployment
+ng build --configuration production
+firebase deploy
